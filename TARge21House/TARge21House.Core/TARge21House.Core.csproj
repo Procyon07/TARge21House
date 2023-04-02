@@ -6,10 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="ServiceInterface\**" />
-    <EmbeddedResource Remove="ServiceInterface\**" />
-    <None Remove="ServiceInterface\**" />
-  </ItemGroup>
-
 </Project>
