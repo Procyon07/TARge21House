@@ -1,4 +1,5 @@
-﻿using TARge21House.Core.Domain;
+﻿using Microsoft.EntityFrameworkCore;
+using TARge21House.Core.Domain;
 using TARge21House.Core.Dto;
 using TARge21House.Core.ServiceInterface;
 using TARge21House.Data;
@@ -34,19 +35,42 @@ namespace TARge21House.ApplicationServices.Services
             return house;
         }
 
-        public Task<House> Delete(Guid id)
+        public async Task<House> Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var houseId = await _context.Houses
+                .FirstOrDefaultAsync(x => x.Id == id);            
+
+            _context.Houses.Remove(houseId);
+            await _context.SaveChangesAsync();
+
+            return houseId;
         }
 
-        public Task<House> GetAsync(Guid id)
+        public async Task<House> GetAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Houses
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            return result;
         }
 
-        public Task<House> Update(HouseDto dto)
+        public async Task<House> Update(HouseDto dto)
         {
-            throw new NotImplementedException();
+            var domain = new House()
+            {
+                Id = dto.Id,
+                Address = dto.Address,
+                Size = dto.Size,
+                Price = dto.Price,
+                Rooms = dto.Rooms,
+                CreatedAt = dto.CreatedAt,
+                ModifiedAt = DateTime.Now,
+            };
+
+            _context.Houses.Update(domain);
+            await _context.SaveChangesAsync();
+
+            return domain;
         }
     }
 }
