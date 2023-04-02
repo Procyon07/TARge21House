@@ -2,7 +2,7 @@
 {
     public class HouseCreateUpdateViewModel
     {
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
         public string Address { get; set; }
         public int Size { get; set; }
         public int Price { get; set; }
