@@ -26,8 +26,8 @@ namespace TARge21House.ApplicationServices.Services
             house.Size = dto.Size;
             house.Price = dto.Price;
             house.Rooms = dto.Rooms;
-            house.CreatedAt = dto.CreatedAt;
-            house.ModifiedAt = dto.ModifiedAt;
+            house.CreatedAt = DateTime.Now;
+            house.ModifiedAt = DateTime.Now;
 
             await _context.Houses.AddAsync(house);
             await _context.SaveChangesAsync();
