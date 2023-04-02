@@ -135,6 +135,42 @@ namespace TARge21House.Controllers
             vm.ModifiedAt = house.ModifiedAt;
 
             return View(vm);
-        }          
+        }
+        [HttpGet]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var house = await _houseServices.GetAsync(id);
+
+            if (house == null)
+            {
+                return NotFound();
+            }           
+
+            var vm = new HouseDeleteViewModel();
+
+            vm.Id = house.Id;
+            vm.Address = house.Address;
+            vm.Size = house.Size;
+            vm.Price = house.Price;
+            vm.Rooms = house.Rooms;
+            vm.CreatedAt = house.CreatedAt;
+            vm.ModifiedAt = house.ModifiedAt;
+
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteConfirmation(Guid id)
+        {
+            var houseId = await _houseServices.Delete(id);
+
+            if (houseId == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

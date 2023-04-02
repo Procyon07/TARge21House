@@ -11,6 +11,11 @@ namespace TARge21House.ApplicationServices.Services
             throw new NotImplementedException();
         }
 
+        public Task<House> Delete(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<House> GetAsync(Guid id)
         {
             throw new NotImplementedException();
