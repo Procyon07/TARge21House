@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TARge21House.Core\TARge21House.Core.csproj" />
+    <ProjectReference Include="..\TARge21House.Data\TARge21House.Data.csproj" />
   </ItemGroup>
 
 </Project>

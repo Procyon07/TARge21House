@@ -1,11 +1,16 @@
 using Microsoft.EntityFrameworkCore;
+using TARge21House.ApplicationServices.Services;
+using TARge21House.Core.ServiceInterface;
 using TARge21House.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<TARge21HouseContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<TARge21HouseContext>(options => 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IHouseService, HouseService>();
 
 var app = builder.Build();
 

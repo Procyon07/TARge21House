@@ -7,20 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\House\HouseCreateUpdateViewModel.cs" />
-    <Compile Remove="Models\House\HouseDeleteViewModel.cs" />
-    <Compile Remove="Models\House\HouseDetailsViewModel.cs" />
-    <Compile Remove="Models\House\HouseIndexViewModel.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Models\House\HouseCreateUpdateViewModel.cs" />
-    <Content Include="Models\House\HouseDeleteViewModel.cs" />
-    <Content Include="Models\House\HouseDetailsViewModel.cs" />
-    <Content Include="Models\House\HouseIndexViewModel.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.14">
       <PrivateAssets>all</PrivateAssets>
@@ -35,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TARge21House.ApplicationServices\TARge21House.ApplicationServices.csproj" />
     <ProjectReference Include="..\TARge21House.Data\TARge21House.Data.csproj" />
   </ItemGroup>
 

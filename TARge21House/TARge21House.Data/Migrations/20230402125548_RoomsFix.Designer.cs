@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TARge21House.Data;
 
@@ -11,9 +12,10 @@ using TARge21House.Data;
 namespace TARge21House.Data.Migrations
 {
     [DbContext(typeof(TARge21HouseContext))]
-    partial class TARge21HouseContextModelSnapshot : ModelSnapshot
+    [Migration("20230402125548_RoomsFix")]
+    partial class RoomsFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -9,8 +9,8 @@ namespace TARge21House.Controllers
 {
     public class HouseController : Controller
     {
-        private TARge21HouseContext _context;
-        private IHouseService _houseServices;
+        private readonly TARge21HouseContext _context;
+        private readonly IHouseService _houseServices;
 
         public HouseController
             (
@@ -25,7 +25,7 @@ namespace TARge21House.Controllers
         {
             var result = _context.Houses
                 .OrderByDescending(y => y.CreatedAt)
-                .Select(x => new House
+                .Select(x => new HouseIndexViewModel
                 {
                     Id = x.Id,
                     Address = x.Address,
