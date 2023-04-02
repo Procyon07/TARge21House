@@ -1,11 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace TARge21House.Core.Domain
+﻿namespace TARge21House.Models.House
 {
-    public class House
+    public class HouseCreateUpdateViewModel
     {
-        [Key]
-        public Guid? Id { get; set; }
+        public Guid Id { get; set; }
         public string Address { get; set; }
         public int Size { get; set; }
         public int Price { get; set; }
@@ -15,6 +12,5 @@ namespace TARge21House.Core.Domain
 
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
-
     }
 }

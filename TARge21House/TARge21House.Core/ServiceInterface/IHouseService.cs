@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TARge21House.Core.Domain;
+using TARge21House.Core.Dto;
 
 namespace TARge21House.Core.ServiceInterface
 {
-    public class IHouseService
+    public interface IHouseService
     {
+        Task<House> Create(HouseDto dto);
+
     }
 }
