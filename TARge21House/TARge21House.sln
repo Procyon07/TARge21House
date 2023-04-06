@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TARge21House", "TARge21House\TARge21House.csproj", "{95B35194-3302-4232-AA47-884AECD4FD60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TARge21House", "TARge21House\TARge21House.csproj", "{95B35194-3302-4232-AA47-884AECD4FD60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TARge21House.ApplicationServices", "TARge21House.ApplicationServices\TARge21House.ApplicationServices.csproj", "{ECCE3CD7-4D79-4BD6-B1A0-AB15B16AA60C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TARge21House.ApplicationServices", "TARge21House.ApplicationServices\TARge21House.ApplicationServices.csproj", "{ECCE3CD7-4D79-4BD6-B1A0-AB15B16AA60C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TARge21House.Core", "TARge21House.Core\TARge21House.Core.csproj", "{221C75C5-E760-43E7-AF47-3B42EAFEE9D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TARge21House.Core", "TARge21House.Core\TARge21House.Core.csproj", "{221C75C5-E760-43E7-AF47-3B42EAFEE9D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TARge21House.Data", "TARge21House.Data\TARge21House.Data.csproj", "{7CD8A35C-2964-45AD-9499-A0B8DAF40672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TARge21House.Data", "TARge21House.Data\TARge21House.Data.csproj", "{7CD8A35C-2964-45AD-9499-A0B8DAF40672}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TARge21House.HouseTest", "TARge21House.HouseTest\TARge21House.HouseTest.csproj", "{87DF331F-179E-4B8B-872B-2478765BE3BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7CD8A35C-2964-45AD-9499-A0B8DAF40672}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CD8A35C-2964-45AD-9499-A0B8DAF40672}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CD8A35C-2964-45AD-9499-A0B8DAF40672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87DF331F-179E-4B8B-872B-2478765BE3BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87DF331F-179E-4B8B-872B-2478765BE3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87DF331F-179E-4B8B-872B-2478765BE3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87DF331F-179E-4B8B-872B-2478765BE3BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
