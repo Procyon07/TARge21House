@@ -59,7 +59,7 @@ namespace TARge21House.HouseTest
         }
 
         [Fact]
-        public async Task ShouldNot_DeleteByIdSpaceship_WhenDidNotDeleteSpaceship()
+        public async Task ShouldNot_DeleteByIdHouse_WhenDidNotDeleteHouse()
         {
             HouseDto house = MockHouseData();
             var addHouse = await Svc<IHouseService>().Create(house);
