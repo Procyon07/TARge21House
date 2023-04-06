@@ -28,14 +28,11 @@ namespace TARge21House.HouseTest
         [Fact]
         public async Task ShouldNot_GetByIdHouse_WhenReturnsNotEqual()
         {
-            //Arrange
             Guid wrongGuid = Guid.Parse(Guid.NewGuid().ToString());
             Guid guid = Guid.Parse("6e8285f6-5205-46d4-b12e-c522f797f378");
 
-            //Act
             await Svc<IHouseService>().GetAsync(guid);
 
-            //Assert
             Assert.NotEqual(wrongGuid, guid);
         }
 
@@ -73,6 +70,48 @@ namespace TARge21House.HouseTest
             Assert.NotEqual(result.Id, addHouse.Id);
         }
 
+       
+
+        [Fact]
+        public async Task Should_UpdateHouse_WhenUpdateData()
+        {
+            var guid = new Guid("6e8285f6-5205-46d4-b12e-c522f797f378");
+
+            House house = new House();
+
+            HouseDto dto = MockHouseData();
+
+            house.Id = Guid.Parse("6e8285f6-5205-46d4-b12e-c522f797f378");
+            house.Address = "sdfdfssfgff";
+            house.Price = 123;
+            house.Size = 123666;            
+            house.CreatedAt = DateTime.Now.AddYears(1);
+            house.ModifiedAt = DateTime.Now.AddYears(1);
+
+
+            await Svc<IHouseService>().Update(dto);
+
+            Assert.Equal(house.Id, guid);
+            Assert.DoesNotMatch(house.Address, dto.Address);
+            Assert.DoesNotMatch(house.Size.ToString(), dto.Size.ToString());
+            Assert.Equal(house.Price, house.Price);
+
+        }
+
+        [Fact]
+        public async Task ShouldNot_UpdateHouse_WhenNotUpdateData()
+        {
+            HouseDto dto = MockHouseData();
+            var createHouse = await Svc<IHouseService>().Create(dto);
+
+            HouseDto nullUpdate = MockNullHouse();
+            var result = await Svc<IHouseService>().Update(nullUpdate);
+
+            var nullId = nullUpdate.Id;
+
+            Assert.False(result.Id == nullId);
+        }
+
         private HouseDto MockHouseData()
         {
             HouseDto house = new()
@@ -84,8 +123,21 @@ namespace TARge21House.HouseTest
                 CreatedAt = DateTime.Now,
                 ModifiedAt = DateTime.Now,
             };
-
             return house;
+        }
+        private HouseDto MockNullHouse()
+        {
+            HouseDto nullDto = new()
+            {
+                Id = null,
+                Address = "hhhhh",
+                Price = 123,
+                Size = 123,
+                Rooms = 123,
+                CreatedAt = DateTime.Now.AddYears(1),
+                ModifiedAt = DateTime.Now.AddYears(1),
+            };
+            return nullDto;
         }
     }
 }
